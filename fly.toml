@@ -17,18 +17,18 @@ primary_region = 'ams'
   min_machines_running = 0
   processes = ['app']
 
-[[http_service.checks]]
-  grace_period = "30s"
-  interval = "10s"
-  method = "GET"
-  timeout = "5s"
-  path = "/version"
+#  [[http_service.checks]]
+#    grace_period = "15s" # grace period does not work
+#    interval = "60s"
+#    method = "GET"
+#    timeout = "10s"
+#    path = "/version"
 
 [[vm]]
   memory = '256mb'
   cpu_kind = 'shared'
   cpus = 1
 
-[deploy]
-  strategy = "canary"
+#[deploy]
+#  strategy = "canary"
 
