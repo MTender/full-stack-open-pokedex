@@ -18,8 +18,8 @@ primary_region = 'ams'
   processes = ['app']
 
 [[http_service.checks]]
-  grace_period = "10s"
-  interval = "1m"
+  grace_period = "20s"
+  interval = "10s"
   method = "GET"
   timeout = "5s"
   path = "/version"
