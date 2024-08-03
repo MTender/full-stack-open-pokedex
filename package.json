@@ -4,12 +4,13 @@
   "description": "Full Stack Open",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
+    "dev": "webpack-dev-server --open --mode development",
     "start-prod": "node app.js",
     "test": "jest",
     "test:e2e": "npx playwright install firefox --with-deps && playwright test",
     "eslint": "eslint \"./**/*.{js,jsx}\"",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "deploy": "npm run build && fly deploy"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "@babel/plugin-transform-runtime": "^7.23.7",
     "@babel/preset-env": "^7.23.7",
     "@babel/preset-react": "^7.23.3",
+    "@flydotio/dockerfile": "^0.5.8",
     "@playwright/test": "^1.45.3",
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.1.2",
@@ -57,6 +59,8 @@
   },
   "jest": {
     "testEnvironment": "jsdom",
-    "testPathIgnorePatterns": ["e2e-tests"]
+    "testPathIgnorePatterns": [
+      "e2e-tests"
+    ]
   }
 }
