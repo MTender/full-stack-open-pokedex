@@ -17,7 +17,18 @@ primary_region = 'ams'
   min_machines_running = 0
   processes = ['app']
 
+[[http_service.checks]]
+  grace_period = "10s"
+  interval = "1m"
+  method = "GET"
+  timeout = "5s"
+  path = "/version"
+
 [[vm]]
-  memory = '1gb'
+  memory = '256mb'
   cpu_kind = 'shared'
   cpus = 1
+
+[deploy]
+  strategy = "canary"
+
